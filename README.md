@@ -1,36 +1,43 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Correlativas
 
-## Getting Started
+Simulador académico para explorar planes de estudio de la UTN, cargar una situación académica temporal y probar escenarios de planificación.
 
-First, run the development server:
+## Desarrollo
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+La aplicación queda disponible en `http://localhost:3000`.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Arquitectura
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```text
+src/
+├── app/                              # App Router: rutas, metadata y estilos globales
+│   ├── layout.tsx
+│   ├── page.tsx                     # Server Component
+│   └── globals.css
+└── features/
+    └── academic-plan/
+        ├── components/              # Frontera cliente y componentes de presentación
+        ├── data/                    # Planes académicos estructurados
+        └── model/                   # Tipos y reglas puras del dominio
+```
 
-## Learn More
+`src/app` se mantiene enfocado en convenciones de Next.js. La lógica del producto se organiza por feature para evitar dependencias genéricas entre carpetas globales.
 
-To learn more about Next.js, take a look at the following resources:
+## Documentación
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- `CONTEXT.md`: glosario del dominio.
+- `PRODUCT.md`: propósito y principios del producto.
+- `docs/MVP.md`: alcance funcional.
+- `docs/DESIGN.md`: dirección visual.
+- `data-source/`: documentos académicos fuente.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Validación
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```bash
+npm run lint
+npm run build
+```

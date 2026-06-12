@@ -15,6 +15,8 @@ Permitir que una persona cargue temporalmente su estado académico, comprenda qu
 
 Los datos se obtienen de los diseños curriculares y regímenes de correlatividades incluidos en `data-source/`.
 
+Los planes de Ingeniería Electromecánica e Ingeniería Química incluyen las 41 materias obligatorias de sus respectivos planes 2023. El plan de Licenciatura en Administración Rural incluye sus 36 materias numeradas del Plan 2026. Las electivas numeradas de Administración Rural se representan en el mapa; las electivas no numeradas y la Práctica Profesional Supervisada de las ingenierías se mantienen documentadas únicamente en las fuentes.
+
 ## Flujo principal
 
 1. Seleccionar una carrera y versión del plan.
